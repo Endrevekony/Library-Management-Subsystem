@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+ <html class="no-js"> 
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Book search</title>
+
+  	<link rel="shortcut icon" href="favicon.ico">
+
+  	<!-- Google Webfont -->
+	<link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic|Montserrat:400,700' rel='stylesheet' type='text/css'>
+	<!-- Themify Icons -->
+	<link rel="stylesheet" href="css/themify-icons.css">
+	<!-- FontAwesome Icons -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<!-- Owl Carousel -->
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="css/magnific-popup.css">
+	<!-- Easy Responsive Tabs -->
+	<link rel="stylesheet" href="css/easy-responsive-tabs.css">
+	<!-- Theme Style -->
+	<link rel="stylesheet" href="css/style.css">
+
+	
+	</head>
+	<body class="gototop">
+		
+		<!-- Navigation -->
+		<div id="fh5co-main-nav-wrap">
+			<div class="fh5co-nav-overlay"></div>
+			<div class="fh5co-nav-inner">
+				<ul id="fh5co-main-nav">
+					<li><a href="home.html">Home</a></li>
+					<li><a href="mybooks.html">My books</a></li>
+					<li class="active"><a href="booksearch.html">Book search</a></li>
+					<li><a href="profile.html">My Profile</a></li>
+				</ul>
+				<ul class="fh5co-social">
+					<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+					<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+					<li><a href="#"><i class="fa fa-instagram"></i></a></li>
+					<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- Navigation -->
+        
+		<!-- Header -->
+		<header id="fh5co-header" role="banner">
+			<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle fh5co-nav-white"><i></i></a>
+			<div id="fh5co-logo" class="text-center"><a href="index.html"><img src="images/logo.png" alt="Image"></a></div>
+		</header>
+		<!-- Header -->
+		
+		<!-- Hero -->
+		<aside role="complementary" id="fh5co-hero" style="background-image: url(images/hero_bg_5.jpg);">
+			<div class="fh5co-bg-overlay"></div>
+			<div class="container">
+				<div class="fh5co-hero-text-wrap">
+					<div class="fh5co-hero-text">
+					<br/>
+						<h2 class="fh5co-uppercase-heading-sm">Find your books</h2>
+						<h1>A new way of choosing what to read</h1>
+					</div>
+				</div>
+			</div>
+		</aside>
+		<!-- Hero -->
+		
+		<!-- Main -->
+		<main role="main">
+                        
+					<!-- Container -->
+			<div class="container">
+							<div class="col-md-8 col-md-offset-2">
+								<form action="#" method="post" id="login">
+									<div class="col-md-6">
+										<div class="form-group">
+											<label for="ISBN" class="sr-only">ISBN</label>
+											<input placeholder="ISBN" id="ISBN" type="text" class="form-control input-lg">
+										</div>	
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label for="Name" class="sr-only">Name</label>
+											<input placeholder="Name" id="Name" type="text" class="form-control input-lg">
+										</div>	
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label for="Author" class="sr-only">Author</label>
+											<input placeholder="Author" id="Author" type="text" class="form-control input-lg">
+										</div>	
+									</div>
+
+									<div class="col-md-6">
+											<label for="Category" class="sr-only">Category</label>
+											<select class="form-control input-lg" id="Category">
+											  <option>--Category--</option>
+											  <option>Crime</option>
+											  <option>Adventures</option>
+											  <option>Tragedy</option>
+											  <option>Modern Times</option>
+											  <option>Biography</option>
+											</select>
+										</div>	
+									<div class="col-md-12">
+										<div class="form-group">
+											<input type="button" class="btn btn-primary btn-lg " value="Submit"onclick="kveri()">
+											<input type="reset" class="btn btn-outline btn-lg " value="Reset">
+										</div>	
+									</div>
+									
+									
+								</form>	
+								
+							</div>
+							
+						</div>
+
+			<!-- Container -->
+			<div class="content">
+
+            <form id="add-book-form"></form>
+
+            <ul id="book-list" class="fh5co-accordion"></ul>
+
+        </div>
+
+
+			
+		</main>
+		<!-- Main -->
+	
+
+			
+		<!-- jQuery -->
+		<script src="js/jquery-1.10.2.min.js"></script>
+		<!-- jQuery Easing -->
+		<script src="js/jquery.easing.1.3.js"></script>
+		<!-- Bootstrap -->
+		<script src="js/bootstrap.js"></script>
+		<!-- Owl carousel -->
+		<script src="js/owl.carousel.min.js"></script>
+		<!-- Magnific Popup -->
+		<script src="js/jquery.magnific-popup.min.js"></script>
+		<!-- Easy Responsive Tabs -->
+		<script src="js/easyResponsiveTabs.js"></script>
+		<!-- FastClick for Mobile/Tablets -->
+		<script src="js/fastclick.js"></script>
+		<!-- Velocity -->
+		<script src="js/velocity.min.js"></script>
+		<!-- Main JS -->
+		<script src="js/main.js"></script>
+		
+		
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-auth.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBNG2fOjNs5JBr_D6kc0pTh6_zGDw25G-E",
+    authDomain: "library-management-subsystem.firebaseapp.com",
+    databaseURL: "https://library-management-subsystem.firebaseio.com",
+    projectId: "library-management-subsystem",
+    appId: "1:658412865344:web:d2e240135a0d9988ebdca5",
+    measurementId: "G-83W4H65MW6"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+</script>
+  <script src="js/app.js"></script>
+	</body>
+</html>
