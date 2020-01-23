@@ -1,4 +1,3 @@
-
 async function login(){
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
@@ -15,11 +14,16 @@ var requestOptions = {
   body: raw,
   redirect: 'follow'
 };
-
     let response = await fetch("http://teachersystem.herokuapp.com/teachers/login_teacher", requestOptions);
-    if (response.ok) {
+if (response.ok) {
         window.location = "home.html";
 } else {
-  alert("Incorrect e-mail or password");
+    
+    firebase.auth().signInWithEmailAndPassword(email, password).then(function(firebaseUser) {
+       window.location = "profile.html";
+   })
+  .catch(function(error) {
+         alert("Incorrect e-mail or password");
+  });
 }
 }
