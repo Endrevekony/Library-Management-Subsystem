@@ -7,8 +7,6 @@
 	<title>Library</title>
 
 
-  	<link rel="shortcut icon" href="favicon.ico">
-
   	<!-- Google Webfont -->
 	<link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic|Montserrat:400,700' rel='stylesheet' type='text/css'>
 	<!-- Themify Icons -->
@@ -32,7 +30,7 @@
 	<body data-name="gototop">
 		<!-- Hero -->
 				<header id="fh5co-header" role="banner">
-			<div id="fh5co-logo" class="text-center"><a href="index.html"><img src="images/logo.png" alt="Image"></a></div>
+			<div id="fh5co-logo" class="text-center"><img src="images/logo.png" alt="Image"></div>
 		</header>
 		<br/>
 		<aside role="complementary" id="fh5co-hero" style="background-image: url(images/hero_bg_1.jpg);">
@@ -71,7 +69,7 @@
 								<input type="password" id="password" class="form-control input-lg" placeholder="Password">
 							</div>
 							<div class="form-group text-center">
-								  <input type="button" value="Log In" name="Submit" id="Submit" class="btn btn-info" role="button"  onclick="login()"/> 
+								  <input type="button" value="Log In" name="Submit" id="Submit" class="btn btn-info" role="button"  onclick="login()"/>
 							</div>
 						</div>
 					</form>
@@ -82,6 +80,28 @@
 			
 		</main>
 		<!-- Main -->
+					
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-auth.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBNG2fOjNs5JBr_D6kc0pTh6_zGDw25G-E",
+    authDomain: "library-management-subsystem.firebaseapp.com",
+    databaseURL: "https://library-management-subsystem.firebaseio.com",
+    projectId: "library-management-subsystem",
+    appId: "1:658412865344:web:d2e240135a0d9988ebdca5",
+    measurementId: "G-83W4H65MW6"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+</script>
 			
 		<!-- jQuery -->
 		<script src="js/jquery-1.10.2.min.js"></script>
@@ -97,8 +117,6 @@
 		<script src="js/easyResponsiveTabs.js"></script>
 		<!-- FastClick for Mobile/Tablets -->
 		<script src="js/fastclick.js"></script>
-		<!-- Velocity -->
-		<script src="js/velocity.min.js"></script>
 		<!-- Main JS -->
 		<script src="js/main.js"></script>
 		<script src="js/scripts.js"></script>

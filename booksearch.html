@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Book search</title>
 
-  	<link rel="shortcut icon" href="favicon.ico">
+
 
   	<!-- Google Webfont -->
 	<link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic|Montserrat:400,700' rel='stylesheet' type='text/css'>
@@ -37,7 +37,7 @@
 					<li><a href="home.html">Home</a></li>
 					<li><a href="mybooks.html">My books</a></li>
 					<li class="active"><a href="booksearch.html">Book search</a></li>
-					<li><a href="profile.html">My Profile</a></li>
+					<li><a href="index.html">Sign Out</a></li>
 				</ul>
 				<ul class="fh5co-social">
 					<li><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -52,7 +52,7 @@
 		<!-- Header -->
 		<header id="fh5co-header" role="banner">
 			<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle fh5co-nav-white"><i></i></a>
-			<div id="fh5co-logo" class="text-center"><a href="index.html"><img src="images/logo.png" alt="Image"></a></div>
+			<div id="fh5co-logo" class="text-center"><img src="images/logo.png" alt="Image"></div>
 		</header>
 		<!-- Header -->
 		
@@ -80,32 +80,29 @@
 								<form action="#" method="post" id="login">
 									<div class="col-md-6">
 										<div class="form-group">
-											<label for="ISBN" class="sr-only">ISBN</label>
 											<input placeholder="ISBN" id="ISBN" type="text" class="form-control input-lg">
 										</div>	
 									</div>
 									<div class="col-md-6">
 										<div class="form-group">
-											<label for="Name" class="sr-only">Name</label>
 											<input placeholder="Name" id="Name" type="text" class="form-control input-lg">
 										</div>	
 									</div>
 									<div class="col-md-6">
 										<div class="form-group">
-											<label for="Author" class="sr-only">Author</label>
 											<input placeholder="Author" id="Author" type="text" class="form-control input-lg">
 										</div>	
 									</div>
 
 									<div class="col-md-6">
-											<label for="Category" class="sr-only">Category</label>
-											<select class="form-control input-lg" id="Category">
-											  <option>--Category--</option>
+											<select name="Category" class="form-control input-lg" id="Category" value="Category" >
+                                              <option></option>
 											  <option>Crime</option>
-											  <option>Adventures</option>
+											  <option>Science</option>
 											  <option>Tragedy</option>
-											  <option>Modern Times</option>
+											  <option>Psychology</option>
 											  <option>Biography</option>
+											  <option>Novel</option>
 											</select>
 										</div>	
 									<div class="col-md-12">
@@ -124,15 +121,32 @@
 
 			<!-- Container -->
 			<div class="content">
-
-            <form id="add-book-form"></form>
-
-            <ul id="book-list" class="fh5co-accordion"></ul>
-
-        </div>
-
-
-			
+					</div>
+                            <form>
+                            <div id="fh5co-tab-feature-vertical" class="fh5co-tab">
+									<ul class="resp-tabs-list hor_1">
+										<li id = "book-list"/li><br/>
+									</ul>
+									<div class="resp-tabs-container hor_1">
+										<div>
+											<div class="row">
+												<div class="col-md-4">
+												<h3>Author: </h3><br/>
+													<h3 id = "desc"></h3>
+												</div>
+												<div class="col-md-4">
+                                                   <h3>Category: </h3><br/>
+                                                    <h3 id="cat"></h3>
+												</div>
+												<div class="col-md-4">
+                                                   <h3>Available: </h3><br/>
+                                                    <h3 id="avl"></h3>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+                        </form>
 		</main>
 		<!-- Main -->
 	
@@ -152,7 +166,7 @@
 		<script src="js/easyResponsiveTabs.js"></script>
 		<!-- FastClick for Mobile/Tablets -->
 		<script src="js/fastclick.js"></script>
-		<!-- Velocity -->
+				<!-- Velocity -->
 		<script src="js/velocity.min.js"></script>
 		<!-- Main JS -->
 		<script src="js/main.js"></script>
@@ -163,9 +177,7 @@
 
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-analytics.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-firestore.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-auth.js"></script>
 
 <script>
   // Your web app's Firebase configuration
